@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мої покупки</title>
+</head>
+<body>
+
+    <h1>Мої покупки</h1>
+
+    {% for order in orders %}
+
+        <h2>{{ order.shoes.name }}</h2>
+
+        <img src="/static/{{ order.shoes.image_filename }}" width="200">
+
+        <p>Ціна: {{ order.shoes.price }} грн</p>
+        <p>Ім'я: {{ order.user.name }}</p>
+        <p>Email: {{ order.user.email }}</p>
+        <p>Телефон: {{ order.user.phone_number }}</p>
+
+        <hr>
+
+    {% endfor %}
+
+    <a href="/">На головну</a>
+
+</body>
+</html>

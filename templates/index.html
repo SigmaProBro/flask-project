@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shoes Shop</title>
+</head>
+<body>
+
+    <h1> Shoes Shop</h1>
+
+    <p>Ласкаво просимо до нашого магазину!</p>
+
+    <a href="/shoes">
+        <button>Переглянути взуття</button>
+    </a>
+
+    <br><br>
+
+    <a href="/orders">
+        <button>Мої покупки</button>
+    </a>
+
+    <br><br>
+
+    <a href="/add_new_product/">
+        <button>Додати новий товар</button>
+    </a>
+
+    
+    {% if "username" in session %}
+        <h2>Привіт, {{ session["username"] }}! </h2>
+        <a href="/logout"><button>Вийти з акаунту</button></a>
+    {% else %}
+        <a href="/login"><button>Увійти</button></a>
+        <a href="/register"><button>Зареєструватися</button></a>
+    {% endif %}
+
+    <hr>
+    <nav>
+        <a href="/shoes">Каталог взуття</a> | 
+        <a href="/orders">Замовлення</a> | 
+        <a href="/add_new_product/">Додати товар</a>
+    </nav>
+
+
+</body>
+</html>
+

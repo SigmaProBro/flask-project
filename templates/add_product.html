@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add product</title>
+</head>
+<body>
+
+<h1>Add new product</h1>
+
+<form action="/add_new_product/" method="POST" enctype="multipart/form-data">
+
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <br><br>
+
+    <label>Description:</label>
+    <input type="text" name="description" required>
+
+    <br><br>
+
+    <label>Price:</label>
+    <input type="number" name="price" required>
+
+    <br><br>
+
+    <input type="file" name="image" required>
+
+    <br><br>
+
+    <button type="submit">Add</button>
+
+</form>
+
+<br>
+
+<a href="/">На головну</a>
+
+</body>
+</html>

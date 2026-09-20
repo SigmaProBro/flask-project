@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Замовлення</title>
+</head>
+<body>
+
+    <h1>Замовлення</h1>
+
+    <h2>{{ shoe.name }}</h2>
+
+    <img src="{{ url_for('static', filename='img/' + shoe.image_filename) }}"
+         width="200">
+
+    <p>{{ shoe.description }}</p>
+    <p>Ціна: {{ shoe.price }} грн</p>
+
+    <form method="POST">
+
+        <p>
+            Ім'я:
+            <input type="text" name="name" required>
+        </p>
+
+        <p>
+            Email:
+            <input type="email" name="email" required>
+        </p>
+
+        <p>
+            Телефон:
+            <input type="text" name="phone_number" required>
+        </p>
+
+        <button type="submit">Підтвердити замовлення</button>
+
+    </form>
+
+    <a href="/shoes">Назад</a>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Взуття</title>
+</head>
+<body>
+
+    <h1>Наше взуття</h1>
+
+    {% for shoe in shoes %}
+
+        <h2>{{ shoe.name }}</h2>
+
+        {% if shoe.image_filename == "nike_air_max.png" %}
+            <img src="/static/img/photo_2026-09-07_18-41-21.jpg" width="200">
+
+        {% elif shoe.image_filename == "adidas_ultrboost.png" %}
+            <img src="/static/img/photo_2026-09-07_18-41-27.jpg" width="200">
+
+        {% elif shoe.image_filename == "puma_rsx.png" %}
+            <img src="/static/img/photo_2026-09-07_18-41-33.jpg" width="200">
+        {% endif %}
+
+        <p>{{ shoe.description }}</p>
+        <p>Ціна: {{ shoe.price }} грн</p>
+        <img src="/static/{{ shoe.image_filename }}" width="200">
+
+        <a href="/order/{{ shoe.id }}">
+            <button>Замовити</button>
+        </a>
+
+        <hr>
+
+    {% endfor %}
+
+    <a href="/">На головну</a>
+
+</body>
+</html>
