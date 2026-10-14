@@ -3,13 +3,14 @@ from models import Shoes, Users, Orders, Session, get_all_products
 from werkzeug.utils import secure_filename
 from magic import Magic
 import os
+import logging
+import pytest
 
 FILE_PATH = os.path.join(os.getcwd(), "static", "img")
 mime = Magic(mime=True)
 
 app = Flask(__name__)
 app.secret_key = "147896352N!"
-
 
 @app.route("/")
 def main():
